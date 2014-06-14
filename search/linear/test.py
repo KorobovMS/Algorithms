@@ -1,7 +1,7 @@
 import unittest
-from linear.linear_search import linear_search
+from linear_search import linear_search
 
-class SearchTest(unittest.TestCase):
+class LinearSearchTest(unittest.TestCase):
     def setUp(self):
         self.search_functions = [linear_search]
     
