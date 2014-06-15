@@ -4,7 +4,7 @@ import random
 from time import clock
 
 class HeapsortTest(unittest.TestCase):
-    def SetUp(self):
+    def setUp(self):
         pass
     
     def test_empty(self):
