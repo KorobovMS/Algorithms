@@ -4,15 +4,15 @@ from linear_search import linear_search
 class UnsortedDataSearchTest(unittest.TestCase):
     def setUp(self):
         self.search_functions = [linear_search]
-    
+
     def assert_found_for_all_functions(self, case):
         for search in self.search_functions:
             self.assertEqual(search(case[0], case[1]), case[2])
-    
+
     def assert_raises_for_all_functions(self, case):
         for search in self.search_functions:
             self.assertRaises(ValueError, search, case[0], case[1])
-    
+
     def test_found(self):
         cases = [
             ([1], 1, 0),
@@ -21,7 +21,7 @@ class UnsortedDataSearchTest(unittest.TestCase):
         ]
         for case in cases:
             self.assert_found_for_all_functions(case)
-        
+
     def test_not_found(self):
         cases = [
             ([], 1),

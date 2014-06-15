@@ -5,7 +5,7 @@ def heapsort(A):
         A[0], A[end] = A[end], A[0]
         end = end - 1
         siftDown(A, 0, end)
-    
+
 def heapify(A):
     start = int((len(A) - 2)/2)
     while start >= 0:
