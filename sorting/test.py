@@ -1,22 +1,27 @@
 from heapsort import heapsort
+from mergesort import mergesort
 import unittest
 import random
 
-class HeapsortTest(unittest.TestCase):
+class SortingTest(unittest.TestCase):
     def setUp(self):
-        pass
+        self.sort_functions = [heapsort, mergesort]
 
     def test_empty(self):
-        source = []
+        for sort_func in self.sort_functions:
+            A = []
+            sort_func(A)
+            self.assertEqual([], A)
 
     def test_random(self):
-        sizes = [10**i for i in range(5)]
+        sizes = [10 for x in range(10)]
         for size in sizes:
-            source = [random.random() for i in range(size)]
-            excpected = sorted(source)
-            actual = source[:]
-            heapsort(actual)
-            self.assertEqual(excpected, actual)
+            for sort_func in self.sort_functions:
+                source = [random.random() for i in range(size)]
+                excpected = sorted(source)
+                actual = source[:]
+                sort_func(actual)
+                self.assertEqual(excpected, actual)
 
 if __name__ == '__main__':
     unittest.main()
