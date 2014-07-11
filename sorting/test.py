@@ -1,12 +1,17 @@
 from heapsort import heapsort
 from mergesort import mergesort
 from insertion_sort import insertion_sort
+from bubble_sort import bubble_sort
 import unittest
 import random
 
 class SortingTest(unittest.TestCase):
     def setUp(self):
-        self.sort_functions = [heapsort, mergesort, insertion_sort]
+        self.sort_functions = [
+            heapsort,
+            mergesort,
+            insertion_sort,
+            bubble_sort]
 
     def test_empty(self):
         for sort_func in self.sort_functions:
