@@ -1,6 +1,15 @@
 def quicksort(A):
     actual_quicksort(A, 0, len(A))
 
+def tail_recursion_quicksort(A):
+    actual_tail_recursion_quicksort(A, 0, len(A))
+
+def actual_tail_recursion_quicksort(A, begin, end):
+    while end - begin > 1:
+        q = partition(A, begin, end)
+        actual_tail_recursion_quicksort(A, begin, q)
+        begin = q + 1
+
 def actual_quicksort(A, begin, end):
     if end - begin > 1:
         edge = hoare_half_partition(A, begin, end)

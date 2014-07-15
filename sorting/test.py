@@ -3,6 +3,7 @@ from mergesort import mergesort
 from insertion_sort import insertion_sort
 from bubble_sort import bubble_sort
 from quicksort import quicksort
+from quicksort import tail_recursion_quicksort
 import unittest
 import random
 
@@ -13,7 +14,8 @@ class SortingTest(unittest.TestCase):
             mergesort,
             insertion_sort,
             bubble_sort,
-            quicksort]
+            quicksort,
+            tail_recursion_quicksort]
 
     def test_empty(self):
         for sort_func in self.sort_functions:
