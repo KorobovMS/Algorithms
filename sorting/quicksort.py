@@ -3,7 +3,7 @@ def quicksort(A):
 
 def actual_quicksort(A, begin, end):
     if end - begin > 1:
-        edge = partition(A, begin, end)
+        edge = hoare_half_partition(A, begin, end)
         actual_quicksort(A, begin, edge)
         actual_quicksort(A, edge + 1, end)
 
@@ -16,3 +16,17 @@ def partition(A, begin, end):
             i = i + 1
     A[i], A[end - 1] = A[end - 1], A[i]
     return i
+
+def hoare_half_partition(A, begin, end):
+    pivot = A[(begin + end) // 2]
+    i = begin
+    j = end - 1
+    while True:
+        while A[i] < pivot:
+            i = i + 1
+        while pivot < A[j]:
+            j = j - 1
+        if i < j:
+            A[i], A[j] = A[j], A[i]
+        else:
+            return j
