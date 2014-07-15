@@ -2,6 +2,7 @@ from heapsort import heapsort
 from mergesort import mergesort
 from insertion_sort import insertion_sort
 from bubble_sort import bubble_sort
+from quicksort import quicksort
 import unittest
 import random
 
@@ -11,7 +12,8 @@ class SortingTest(unittest.TestCase):
             heapsort,
             mergesort,
             insertion_sort,
-            bubble_sort]
+            bubble_sort,
+            quicksort]
 
     def test_empty(self):
         for sort_func in self.sort_functions:
@@ -20,7 +22,7 @@ class SortingTest(unittest.TestCase):
             self.assertEqual([], A)
 
     def test_random(self):
-        sizes = [10 for x in range(10)]
+        sizes = [100 for x in range(10)]
         for sort_func in self.sort_functions:
             for size in sizes:
                 source = [random.random() for i in range(size)]
