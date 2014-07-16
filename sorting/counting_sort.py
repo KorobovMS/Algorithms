@@ -9,5 +9,4 @@ def counting_sort(A, k):
     for x in reversed(A):
         B[C[x]-1] = x
         C[x] = C[x] - 1
-    A.clear()
-    A.extend(B)
+    A[:] = B
