@@ -3,13 +3,17 @@ from itertools import permutations
 
 from randomized_select import randomized_select
 from select_by_sorting import select_by_sorting
+from select_with_medians import select_with_medians
 
 class OrderStatisticsTest(unittest.TestCase):
     def setUp(self):
-        self.functions = [select_by_sorting, randomized_select]
+        self.functions = [
+            select_by_sorting,
+            randomized_select,
+            select_with_medians]
 
     def test_found(self):
-        length = 7
+        length = 8
         array = list(range(1, length + 1))
         all_permutations = permutations(array)
         for permutation in all_permutations:
