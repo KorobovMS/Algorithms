@@ -20,6 +20,7 @@ class HashTableTest(unittest.TestCase):
 
     def test_ins_del(self):
         count = 10000
+
         for i in range(count):
             self.ht.insert(i, i)
             self.assertEqual(self.ht.search(i), i)
